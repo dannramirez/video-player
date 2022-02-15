@@ -1,12 +1,14 @@
+@import './buttons.css';
+
 :root {
-  --Primary: #43DDE6;
-  --White: #ffffff; 
-  
-  
+  --Primary: #26B4BC;
+  --White: #fefefe; 
+  --Font: Arial, Helvetica, sans-serif
 }
 
 body {
   color: var(--White);
   background-color: var(--Primary);
+  font-family: var(--Font);
 }
 
