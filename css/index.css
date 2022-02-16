@@ -12,3 +12,12 @@ body {
   font-family: var(--Font);
 }
 
+.wrapper{
+    max-inline-size: 900px;
+    margin: auto;
+}
+
+.player video{
+    inline-size: 100%;
+    border: 2px solid yellow;
+}

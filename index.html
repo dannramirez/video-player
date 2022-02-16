@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/index.css">
 
-  <title>Video pLayer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Video pLayer</title>
 </head>
+
 <body>
-  <h1>Video Player</h1>
+    <h1>Video Player</h1>
 
-  <button class="button" id="play"></button>
-  <button class="button" id="pause"></button>
-  <button id="forward"></button>
-  <button id="backward"></button>
+    <div class="wrapper">
+        <div class="player">
+            <button class="button" id="play" aria-label="Play video" title="Play video"></button>
+            <button class="button" hidden id="pause" aria-label="Pause video" title="Pause video"></button>
+            <button class="button" id="forward" aria-label="Forward video 10 seconds"
+                title="Forward video 10 seconds"></button>
+            <button class="button" id="backward" aria-label="Backward video 10 seconds"
+                title="Backward video 10 seconds"></button>
 
-  <video autoplay muted controls src="./videos/TOO Fast.mp4" width="50%"></video>
+            <video id="videoPlayer" poster="./images//poster.png" muted src="./videos/TOO Fast.mp4"
+                width="400px"></video>
+        </div>
+    </div>
+    <script>
+        const $video = document.querySelector('#videoPlayer');
+        const $play = document.querySelector('#play');
+        const $pause = document.querySelector('#pause');
+        const $forward = document.querySelector('#forward');
+        const $backward = document.querySelector('#backward');
 
+        const handlePlay = () => {
+            $video.play();
+            $play.hidden = true;
+            $pause.hidden = false;
+        }
+
+        const handlePause = () => {
+            $video.pause();
+            $play.hidden = false;
+            $pause.hidden = true;
+        }
+
+        $play.addEventListener('click', handlePlay);
+        $pause.addEventListener('click', handlePause);
+    </script>
 </body>
+
 </html>
