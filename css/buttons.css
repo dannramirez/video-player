@@ -9,7 +9,7 @@ button {
 }
 
 .button:active{
-    transform: scale(.9);
+    transform: scale(.8);
 }
 
 #play {
